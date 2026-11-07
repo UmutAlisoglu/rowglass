@@ -4,7 +4,9 @@
 
 Drop in a before and an after, choose the column that identifies each record, and compare. Rowglass follows the records even when someone sorts the spreadsheet differently. You get a change brief, old and new values, and a report you can keep.
 
-[Open Rowglass](https://alisoglu.com/rowglass/) · [Download the portable app](https://github.com/UmutAlisoglu/rowglass/releases/latest) · [Report a problem](https://github.com/UmutAlisoglu/rowglass/issues)
+**[Download the portable app](https://github.com/UmutAlisoglu/rowglass/releases/latest)** (unzip, open `index.html`, works offline) · [Report a problem](https://github.com/UmutAlisoglu/rowglass/issues)
+
+There is no hosted version at the moment. The portable download is the way to use Rowglass.
 
 ## What it’s useful for
 
@@ -28,7 +30,7 @@ Reports include your data. Share them only with the intended recipients. The HTM
 
 ## Portable app
 
-Download and extract **Rowglass-1.0.0-portable.zip** from Releases, then open `index.html`. Keep the files together. No installation, Node, Python, server, account or internet connection is needed. It is a portable browser app rather than a Windows executable. Use a current desktop browser; mobile browsers can use the hosted version.
+Download and extract **Rowglass-1.0.0-portable.zip** from Releases, then open `index.html`. Keep the files together. No installation, Node, Python, server, account or internet connection is needed. It is a portable browser app rather than a Windows executable. Use a current desktop browser.
 
 Clipboard access depends on your browser and can be restricted for local files. Copy the visible brief manually or save a report if the Copy button is unavailable.
 
@@ -50,7 +52,7 @@ Per table: **10 MB, 20,000 data rows, 200 columns and 1,000,000 cells**. XLSX wo
 
 File processing happens in the page’s memory. Rowglass makes no upload, analytics, font, API or account requests and does not write input, filenames or history to cookies, localStorage or IndexedDB. Clear everything or close the page to release the session. Saved downloads remain wherever you save them.
 
-The hosted page uses GitHub Pages. Loading its public code sends ordinary connection information, such as your IP address, to the host. The app’s Content Security Policy blocks network connections from the application. The portable download works offline.
+The app’s Content Security Policy blocks network connections from the application. The portable download works offline.
 
 ## Development
 
@@ -62,7 +64,7 @@ npm run build
 npm run dev
 ```
 
-Open `http://127.0.0.1:8790`. `dist/` is the portable application. The comparison engine is `src/core.js`, the interface is `src/app.js`, and examples are in `src/samples.js`. The same files run from a local folder and from the website.
+Open `http://127.0.0.1:8790`. `dist/` is the portable application. The comparison engine is `src/core.js`, the interface is `src/app.js`, and examples are in `src/samples.js`. The same files run from a local folder or any static host.
 
 For browser checks, run `npm ci`, `npx playwright install chromium`, `npm run build`, and `npm run test:browser`. The browser script starts its own local server, checks actual downloads and the offline build, and saves screenshots in `.qa/`. Set `BROWSER_CHANNEL=chrome` to use an installed Google Chrome instead. Playwright is a development dependency only; it is not shipped with the app.
 
